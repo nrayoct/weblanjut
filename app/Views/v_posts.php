@@ -1,3 +1,3 @@
 <div class="container">
-    <h1>Ini Halaman Posts</h1>
+    <h1>All Posts</h1>
 </div>
