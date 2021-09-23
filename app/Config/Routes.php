@@ -42,6 +42,7 @@ $routes->get('/', function () {
     echo view('v_home');
     echo view('layouts/footer');
 });
+$routes->get('/admin', 'Templating::index');
 $routes->get('/about', function () {
     $data = [
         'title' => "Blog - About"

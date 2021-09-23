@@ -7,13 +7,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link <?= \Config\Services::request()->uri->getSegment(1) == '' ? 'active' : '' ?> " aria-current="page" href="/">Home</a>
+                    <a class="nav-link <?= \Config\Services::request()->uri->getSegment(1) == ' ' ? 'active' : ' ' ?> " aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= \Config\Services::request()->uri->getSegment(1) == 'home' ? 'active' : '' ?>" href="/about">About</a>
+                    <a class="nav-link <?= \Config\Services::request()->uri->getSegment(1) == 'home' ? 'active' : ' ' ?>" href="/about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= \Config\Services::request()->uri->getSegment(1) == 'about' ? 'active' : '' ?>" href="/posts">Post</a>
+                    <a class="nav-link <?= \Config\Services::request()->uri->getSegment(1) == 'about' ? 'active' : ' ' ?>" href="/posts">Post</a>
                 </li>
 
             </ul>
