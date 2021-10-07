@@ -43,6 +43,8 @@ $routes->get('/', function () {
     echo view('layouts/footer');
 });
 $routes->get('/admin', 'Templating::index');
+$routes->get('/register', 'Templating::register');
+$routes->post('/saveRegister', 'Templating::saveRegister'); //karena dia methodnya post di form tadi
 $routes->get('/about', function () {
     $data = [
         'title' => "Blog - About"
