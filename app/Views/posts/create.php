@@ -214,40 +214,86 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
+                            <h1 class="m-0">My Posts</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
+                                <li class="breadcrumb-item"><a href="#">Posts</a></li>
+                                <li class="breadcrumb-item active">My Posts</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
-
-            <!-- Main content -->
-
-            </section>
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.1.0
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        Form Tambah Posts
+                    </div>
+                    <div class="card-body">
+                        <form action="/admin/posts/store" method="POST">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="judul">Judul Postingan</label>
+                                        <input type="text" class="form-control" id="judul" name="judul">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="slug">slug</label>
+                                        <input type="text" class="form-control" id="slug" name="slug">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="kategori">Kategori Pilihan</label>
+                                        <input type="text" class="form-control" id="kategori" name="kategori">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="auhtor">Author</label>
+                                        <input type="text" class="form-control" id="auhtor" name="auhtor">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane"></i> Submit
+                                    </button>
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="deskripsi">Deskripsi Postingan</label>
+                                    <br>
+                                    <textarea name="deskripsi" id="deskripsi"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </footer>
+        </div>
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
-    </body>
+        <!-- Main content -->
+
+        </section>
+        <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<footer class="main-footer">
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 3.1.0
+    </div>
+</footer>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
+</body>
 </div>
 <!-- ./wrapper -->
 
+<?= $this->endSection(); ?>
+
+<?php $this->section('myscript'); ?>
+<script>
+    $('#deskripsi').summernote()
+</script>
 <?= $this->endSection(); ?>
