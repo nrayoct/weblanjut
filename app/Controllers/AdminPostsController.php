@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\PostModel;
 
 class AdminPostsController extends BaseController
 {
@@ -74,9 +75,19 @@ class AdminPostsController extends BaseController
             ];
             $PostModel = model("PostModel");
             $PostModel->insert($data);
+            session()->setFlashdata('message', 'Post Has Been Added');
+            session()->setFlashdata('alert-class', 'alert-success');
             return redirect()->to(base_url('admin/posts/'));
         } else {
             return redirect()->to(base_url('admin/posts/create'))->withInput()->with('validation', $this->validator);
         }
+    }
+    public function delete($slug)
+    {
+        $posts = new PostModel();
+        $posts->where(['slug' => $slug])->delete();
+        session()->setFlashdata('message', ' Post Deleted Successfully');
+        session()->setFlashdata('alert-class', 'alert-danger');
+        return redirect()->to(base_url('admin/posts/'));
     }
 }
