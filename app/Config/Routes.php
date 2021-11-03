@@ -59,6 +59,9 @@ $routes->get('/admin', 'Templating::index');
 $routes->get('/admin/posts', 'AdminPostsController::index');
 $routes->get('/admin/posts/create', 'AdminPostsController::create');
 $routes->post('/admin/posts/store', 'AdminPostsController::store');
+$routes->get('/admin/posts/edit/(:any)', 'AdminPostsController::edit/$1');
+$routes->post('/admin/posts/update/(:any)', 'AdminPostsController::update/$1');
+
 $routes->delete('/admin/posts/(:any)', 'AdminPostsController::delete/$1');
 
 

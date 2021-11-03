@@ -41,7 +41,7 @@ class Posts extends Migration
             'slug' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
-                'unique' => true
+                'unique' => true,
             ],
             'created_at' => [
                 'type' => 'DATETIME',
